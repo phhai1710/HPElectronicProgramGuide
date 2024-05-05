@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     }()
     private lazy var collectionView: HPEpgCollectionView = {
         let collectionView = HPEpgCollectionView(channelCellSize: CGSize(width: 100, height: 40),
-                                                    timeCellSize: CGSize(width: 160, height: 40))
+                                                 timeCellSize: CGSize(width: 160, height: 40))
         collectionView.epgDelegate = self
         collectionView.epgDataSource = self
         collectionView.register(cellClass: ChannelCell.self)
@@ -100,7 +100,7 @@ class ViewController: UIViewController {
     @objc private func updateTime() {
         let date = Date()
         let calendar = Calendar.current
-
+        
         let hour = calendar.component(.hour, from: date)
         let minutes = calendar.component(.minute, from: date)
         let seconds = calendar.component(.second, from: date)
@@ -139,7 +139,7 @@ extension ViewController: HPEpgCollectionViewDataSource {
         let hourStr = hour < 10 ? "0\(hour)" : "\(hour)"
         let minuteStr = minute < 10 ? "0\(minute)" : "\(minute)"
         cell.setTitle("\(hourStr):\(minuteStr)")
-                
+        
         return cell
     }
     

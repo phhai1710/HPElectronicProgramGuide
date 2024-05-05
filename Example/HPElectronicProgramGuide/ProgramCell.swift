@@ -27,7 +27,7 @@ class ProgramCell: HPProgramCollectionViewCell {
         self.containerView.addSubview(titleLabel)
         self.cellCornerRadius = cornerRadius
         self.cellBorderColor = UIColor.white.cgColor
-
+        
         titleLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.leading.equalToSuperview()
@@ -38,7 +38,7 @@ class ProgramCell: HPProgramCollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     
     // MARK: - Public methods
     func setTitle(_ text: String?) {

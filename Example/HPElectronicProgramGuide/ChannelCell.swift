@@ -42,7 +42,7 @@ class ChannelCell: HPEpgCollectionViewCell {
     
     func setShouldHighlight(_ shouldHighlight: Bool) {
         cellBackgroundColor = shouldHighlight ?
-            UIColor(red: 26/255, green: 176/255, blue: 209/255, alpha: 1) :
+        UIColor(red: 26/255, green: 176/255, blue: 209/255, alpha: 1) :
             .darkGray
     }
 }
