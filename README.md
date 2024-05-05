@@ -1,9 +1,12 @@
 # HPElectronicProgramGuide
 
-[![CI Status](https://img.shields.io/travis/Hai Pham/HPElectronicProgramGuide.svg?style=flat)](https://travis-ci.org/Hai Pham/HPElectronicProgramGuide)
 [![Version](https://img.shields.io/cocoapods/v/HPElectronicProgramGuide.svg?style=flat)](https://cocoapods.org/pods/HPElectronicProgramGuide)
 [![License](https://img.shields.io/cocoapods/l/HPElectronicProgramGuide.svg?style=flat)](https://cocoapods.org/pods/HPElectronicProgramGuide)
 [![Platform](https://img.shields.io/cocoapods/p/HPElectronicProgramGuide.svg?style=flat)](https://cocoapods.org/pods/HPElectronicProgramGuide)
+
+![VideoQuickSeeking](https://github.com/phhai1710/HPElectronicProgramGuide/blob/master/Resources/example.gif?raw=true)
+
+A powerful EPG (Electronic Program Guide) UI library for iOS in Swift. Create stunning program guide interfaces with ease.
 
 ## Example
 
