@@ -1,5 +1,5 @@
 //
-//  DateCell.swift
+//  CrossCell.swift
 //  HPElectronicProgramGuide
 //
 //  Created by Hai Pham on 02/24/2024.
@@ -11,7 +11,7 @@ import UIKit
 import HPElectronicProgramGuide
 import SnapKit
 
-class DateCell: HPEpgCollectionViewCell {
+class CrossCell: HPEpgCollectionViewCell {
     // MARK: - Properties
     private let cornerRadius: CGFloat = 6
     private lazy var titleLabel: UILabel = {

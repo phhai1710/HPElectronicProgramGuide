@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         collectionView.register(cellClass: ChannelCell.self)
         collectionView.register(cellClass: TimeIntervalCell.self)
         collectionView.register(cellClass: ProgramCell.self)
-        collectionView.register(cellClass: DateCell.self)
+        collectionView.register(cellClass: CrossCell.self)
         collectionView.register(cellClass: TimeIndicatorCell.self)
         collectionView.backgroundColor = UIColor(red: 106/255, green: 106/255, blue: 106/255, alpha: 1)
         
@@ -124,7 +124,7 @@ extension ViewController: HPEpgCollectionViewDataSource {
     }
     
     func cellForCrossView(indexPath: IndexPath) -> HPEpgCollectionViewCell {
-        let cell = collectionView.dequeue(cellClass: DateCell.self, forIndexPath: indexPath)
+        let cell = collectionView.dequeue(cellClass: CrossCell.self, forIndexPath: indexPath)
         cell.setTitle("Today")
         cell.backgroundColor = .darkGray
         return cell

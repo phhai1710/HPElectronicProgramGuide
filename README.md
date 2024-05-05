@@ -58,7 +58,15 @@ func didSelectProgram(at index: Int, inChannel channelIndex: Int, indexPath: Ind
 func didScrollToTimeRange(from: Int, to: Int)
 ```
 
-Customize the collection view cells by subclassing HPEpgCollectionViewCell, HPProgramCollectionViewCell and HPTimeIndicatorContainerCell to suit your design needs.
+Customize the collection view cells by subclassing HPEpgCollectionViewCell, HPProgramCollectionViewCell and HPTimeIndicatorContainerCell to suit your design needs. Then, registering 5 different cells for Channel, Time Interval, Program, Cross and Time Indicator
+
+``` Swift
+collectionView.register(cellClass: ChannelCell.self)
+collectionView.register(cellClass: TimeIntervalCell.self)
+collectionView.register(cellClass: ProgramCell.self)
+collectionView.register(cellClass: CrossCell.self)
+collectionView.register(cellClass: TimeIndicatorCell.self)
+```
 
 For more detailed information and usage examples, refer to the example project included in this repository.
 

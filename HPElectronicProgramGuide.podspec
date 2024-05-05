@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HPElectronicProgramGuide'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'A powerful EPG (Electronic Program Guide) UI library for iOS in Swift. Create stunning program guide interfaces with ease.'
 
 # This description is used to generate tags and improve search results.
@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '10.0'
 
   s.source_files = 'HPElectronicProgramGuide/Classes/**/*'
-  
+  s.readme = 'https://raw.githubusercontent.com/phhai1710/HPElectronicProgramGuide/master/README.md'
   # s.resource_bundles = {
   #   'HPElectronicProgramGuide' => ['HPElectronicProgramGuide/Assets/*.png']
   # }

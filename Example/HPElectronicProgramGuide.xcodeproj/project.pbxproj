@@ -16,7 +16,7 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		D02BC954DAE72C968F064903 /* Pods_HPElectronicProgramGuide_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 444B932EAB13C38A8EA51F96 /* Pods_HPElectronicProgramGuide_Tests.framework */; };
 		E3DB6B322B89E4380098CA2D /* ProgramCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DB6B2C2B89E4380098CA2D /* ProgramCell.swift */; };
-		E3DB6B332B89E4380098CA2D /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DB6B2D2B89E4380098CA2D /* DateCell.swift */; };
+		E3DB6B332B89E4380098CA2D /* CrossCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DB6B2D2B89E4380098CA2D /* CrossCell.swift */; };
 		E3DB6B342B89E4380098CA2D /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DB6B2E2B89E4380098CA2D /* ChannelCell.swift */; };
 		E3DB6B352B89E4380098CA2D /* EpgSampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DB6B2F2B89E4380098CA2D /* EpgSampleData.swift */; };
 		E3DB6B362B89E4380098CA2D /* TimeIntervalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DB6B302B89E4380098CA2D /* TimeIntervalCell.swift */; };
@@ -54,7 +54,7 @@
 		AD5A8F5EF05F9EA13575A77D /* Pods-HPElectronicProgramGuide_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HPElectronicProgramGuide_Tests.debug.xcconfig"; path = "Target Support Files/Pods-HPElectronicProgramGuide_Tests/Pods-HPElectronicProgramGuide_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		BD313B0E5E322B5825D07F6A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		E3DB6B2C2B89E4380098CA2D /* ProgramCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramCell.swift; sourceTree = "<group>"; };
-		E3DB6B2D2B89E4380098CA2D /* DateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
+		E3DB6B2D2B89E4380098CA2D /* CrossCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossCell.swift; sourceTree = "<group>"; };
 		E3DB6B2E2B89E4380098CA2D /* ChannelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
 		E3DB6B2F2B89E4380098CA2D /* EpgSampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpgSampleData.swift; sourceTree = "<group>"; };
 		E3DB6B302B89E4380098CA2D /* TimeIntervalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeIntervalCell.swift; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				E3DB6B2E2B89E4380098CA2D /* ChannelCell.swift */,
-				E3DB6B2D2B89E4380098CA2D /* DateCell.swift */,
+				E3DB6B2D2B89E4380098CA2D /* CrossCell.swift */,
 				E3DB6B2F2B89E4380098CA2D /* EpgSampleData.swift */,
 				E3DB6B2C2B89E4380098CA2D /* ProgramCell.swift */,
 				E3DB6B312B89E4380098CA2D /* TimeIndicatorCell.swift */,
@@ -371,7 +371,7 @@
 				E3DB6B322B89E4380098CA2D /* ProgramCell.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				E3DB6B342B89E4380098CA2D /* ChannelCell.swift in Sources */,
-				E3DB6B332B89E4380098CA2D /* DateCell.swift in Sources */,
+				E3DB6B332B89E4380098CA2D /* CrossCell.swift in Sources */,
 				E3DB6B372B89E4380098CA2D /* TimeIndicatorCell.swift in Sources */,
 				E3DB6B352B89E4380098CA2D /* EpgSampleData.swift in Sources */,
 				E3DB6B3A2B8AE8D80098CA2D /* UICollectionView+RegisterCell.swift in Sources */,
