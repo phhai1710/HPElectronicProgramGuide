@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'HPElectronicProgramGuide_Example' do
+  pod 'HPElectronicProgramGuide', :path => '../'
+  pod 'SnapKit'
+  target 'HPElectronicProgramGuide_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

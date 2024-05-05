@@ -1,0 +1,23 @@
+PODS:
+  - HPElectronicProgramGuide (0.1.0)
+  - SnapKit (5.6.0)
+
+DEPENDENCIES:
+  - HPElectronicProgramGuide (from `../`)
+  - SnapKit
+
+SPEC REPOS:
+  trunk:
+    - SnapKit
+
+EXTERNAL SOURCES:
+  HPElectronicProgramGuide:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  HPElectronicProgramGuide: 89ae8e81269bccb048b942b807ffd7271b502810
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+
+PODFILE CHECKSUM: 4117da9febbff3d071c8f05e58b3d05f0f6a501a
+
+COCOAPODS: 1.15.0
