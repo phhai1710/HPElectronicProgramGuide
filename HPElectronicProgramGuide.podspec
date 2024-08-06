@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HPElectronicProgramGuide'
-  s.version          = '1.0.2'
+  s.version          = '1.0.3'
   s.summary          = 'A powerful EPG (Electronic Program Guide) UI library for iOS in Swift. Create stunning program guide interfaces with ease.'
 
 # This description is used to generate tags and improve search results.
