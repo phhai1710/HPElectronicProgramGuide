@@ -1,5 +1,5 @@
 //
-//  TimeIndicatorCell.swift
+//  TimeMarkerCell.swift
 //  HPElectronicProgramGuide
 //
 //  Created by Hai Pham on 02/24/2024.
@@ -11,7 +11,7 @@ import UIKit
 import HPElectronicProgramGuide
 import SnapKit
 
-class TimeIndicatorCell: HPTimeIndicatorContainerCell {
+class TimeMarkerCell: HPTimeMarkerContainerCell {
     
     private lazy var timeLabel: UILabel = {
         let label = UILabel()
@@ -19,7 +19,7 @@ class TimeIndicatorCell: HPTimeIndicatorContainerCell {
         label.textColor = .white
         return label
     }()
-    private lazy var indicatorView: UIView = {
+    private lazy var markerView: UIView = {
         let view = UIView()
         view.backgroundColor = .black.withAlphaComponent(0.7)
         return view
@@ -30,12 +30,12 @@ class TimeIndicatorCell: HPTimeIndicatorContainerCell {
         super.init(frame: frame)
         
         containerView.addSubview(timeLabel)
-        containerView.addSubview(indicatorView)
+        containerView.addSubview(markerView)
         timeLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(5)
             make.leading.trailing.equalToSuperview()
         }
-        indicatorView.snp.makeConstraints { make in
+        markerView.snp.makeConstraints { make in
             make.top.equalTo(timeLabel.snp.bottom)
             make.centerX.equalTo(timeLabel)
             make.bottom.equalToSuperview()

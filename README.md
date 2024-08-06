@@ -29,8 +29,8 @@ pod 'HPElectronicProgramGuide'
 ## Usage In Swift
 
 ``` Swift
-let collectionView = HPEpgCollectionView(channelCellSize: CGSize(width: 100, height: 40),
-                                         timeCellSize: CGSize(width: 160, height: 40))
+let collectionView = HPEpgCollectionView(channelItemSize: CGSize(width: 100, height: 40),
+                                         timeItemSize: CGSize(width: 160, height: 40))
 collectionView.epgDelegate = self
 collectionView.epgDataSource = self
 ```
@@ -38,16 +38,18 @@ collectionView.epgDataSource = self
 Implement the required methods from the HPEpgCollectionViewDataSource protocol to provide the necessary data for the EPG view:
 
 ``` Swift
+func cellForFirstItem(at indexPath: IndexPath) -> HPEpgCollectionViewCell
+func cellForTimeItem(at timeInterval: Int, indexPath: IndexPath) -> HPEpgCollectionViewCell
+func cellForChannelItem(at channelIndex: Int, indexPath: IndexPath) -> HPEpgCollectionViewCell
+func cellForProgramItem(at programIndex: Int, inChannel channelIndex: Int, indexPath: IndexPath) -> HPProgramCollectionViewCell
+func cellForTimeMarker(at indexPath: IndexPath) -> HPTimeMarkerContainerCell
+
+
 func numberOfChannel() -> Int
 func numberOfProgram(inChannel channelIndex: Int) -> Int
 
-func cellForCrossView(indexPath: IndexPath) -> HPEpgCollectionViewCell
-func cellForTime(timeInterval: Int, indexPath: IndexPath) -> HPEpgCollectionViewCell
-func cellForChannel(at index: Int, indexPath: IndexPath) -> HPEpgCollectionViewCell
-func cellForProgram(at index: Int, inChannel channelIndex: Int, indexPath: IndexPath) -> HPProgramCollectionViewCell
-func cellForTimeIndicator(indexPath: IndexPath) -> HPTimeIndicatorContainerCell
-func startSecondOfProgram(at index: Int, inChannel channelIndex: Int) -> Int
-func endSecondOfProgram(at index: Int, inChannel channelIndex: Int) -> Int
+func startSecondOfProgram(at programIndex: Int, inChannel channelIndex: Int) -> Int
+func endSecondOfProgram(at programIndex: Int, inChannel channelIndex: Int) -> Int
 ```
 
 Implement the required methods from the HPEpgCollectionViewDelegate protocol to handle user interactions with the EPG view:
@@ -58,14 +60,14 @@ func didSelectProgram(at index: Int, inChannel channelIndex: Int, indexPath: Ind
 func didScrollToTimeRange(from: Int, to: Int)
 ```
 
-Customize the collection view cells by subclassing HPEpgCollectionViewCell, HPProgramCollectionViewCell and HPTimeIndicatorContainerCell to suit your design needs. Then, registering 5 different cells for Channel, Time Interval, Program, Cross and Time Indicator
+Customize the collection view cells by subclassing HPEpgCollectionViewCell, HPProgramCollectionViewCell and HPTimeMarkerContainerCell to suit your design needs. Then, registering 5 different cells for Channel, Time Interval, Program, First and Time Marker
 
 ``` Swift
 collectionView.register(cellClass: ChannelCell.self)
-collectionView.register(cellClass: TimeIntervalCell.self)
+collectionView.register(cellClass: TimeSegmentCell.self)
 collectionView.register(cellClass: ProgramCell.self)
-collectionView.register(cellClass: CrossCell.self)
-collectionView.register(cellClass: TimeIndicatorCell.self)
+collectionView.register(cellClass: FirstCell.self)
+collectionView.register(cellClass: TimeMarkerCell.self)
 ```
 
 For more detailed information and usage examples, refer to the example project included in this repository.

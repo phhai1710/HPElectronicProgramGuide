@@ -1,5 +1,5 @@
 PODS:
-  - HPElectronicProgramGuide (0.1.0)
+  - HPElectronicProgramGuide (1.0.2)
   - SnapKit (5.6.0)
 
 DEPENDENCIES:
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  HPElectronicProgramGuide: 89ae8e81269bccb048b942b807ffd7271b502810
+  HPElectronicProgramGuide: f1fca8055f53bb2a3874c9d9d58ecaff9e0def9b
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
 PODFILE CHECKSUM: 4117da9febbff3d071c8f05e58b3d05f0f6a501a

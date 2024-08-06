@@ -26,15 +26,15 @@ class ViewController: UIViewController {
         return view
     }()
     private lazy var collectionView: HPEpgCollectionView = {
-        let collectionView = HPEpgCollectionView(channelCellSize: CGSize(width: 100, height: 40),
-                                                 timeCellSize: CGSize(width: 160, height: 40))
+        let collectionView = HPEpgCollectionView(channelItemSize: CGSize(width: 100, height: 40),
+                                                 timeItemSize: CGSize(width: 160, height: 40))
         collectionView.epgDelegate = self
         collectionView.epgDataSource = self
         collectionView.register(cellClass: ChannelCell.self)
-        collectionView.register(cellClass: TimeIntervalCell.self)
+        collectionView.register(cellClass: TimeSegmentCell.self)
         collectionView.register(cellClass: ProgramCell.self)
-        collectionView.register(cellClass: CrossCell.self)
-        collectionView.register(cellClass: TimeIndicatorCell.self)
+        collectionView.register(cellClass: FirstCell.self)
+        collectionView.register(cellClass: TimeMarkerCell.self)
         collectionView.backgroundColor = UIColor(red: 106/255, green: 106/255, blue: 106/255, alpha: 1)
         
         return collectionView
@@ -106,11 +106,11 @@ class ViewController: UIViewController {
         let seconds = calendar.component(.second, from: date)
         let secondOfDay = seconds + 60 * minutes + 3600 * hour
         
-        collectionView.setTimeIndicator(at: secondOfDay)
-        let timeIndicatorCell = collectionView.cellForItem(at: collectionView.getTimeIndicatorIndexPath()) as? TimeIndicatorCell
+        collectionView.updateTimeMarker(at: secondOfDay)
+        let timeMarkerCell = collectionView.cellForItem(at: collectionView.getTimeMarkerIndexPath()) as? TimeMarkerCell
         let hourStr = hour < 10 ? "0\(hour)" : "\(hour)"
         let minuteStr = minutes < 10 ? "0\(minutes)" : "\(minutes)"
-        timeIndicatorCell?.updateTimeLabel("\(hourStr):\(minuteStr)")
+        timeMarkerCell?.updateTimeLabel("\(hourStr):\(minuteStr)")
     }
     
 }
@@ -123,15 +123,15 @@ extension ViewController: HPEpgCollectionViewDataSource {
         return programs.get(channelIndex)?.count ?? 0
     }
     
-    func cellForCrossView(indexPath: IndexPath) -> HPEpgCollectionViewCell {
-        let cell = collectionView.dequeue(cellClass: CrossCell.self, forIndexPath: indexPath)
+    func cellForFirstItem(at indexPath: IndexPath) -> HPEpgCollectionViewCell {
+        let cell = collectionView.dequeue(cellClass: FirstCell.self, forIndexPath: indexPath)
         cell.setTitle("Today")
         cell.backgroundColor = .darkGray
         return cell
     }
     
-    func cellForTime(timeInterval: Int, indexPath: IndexPath) -> HPEpgCollectionViewCell {
-        let cell = collectionView.dequeue(cellClass: TimeIntervalCell.self, forIndexPath: indexPath)
+    func cellForTimeItem(at timeInterval: Int, indexPath: IndexPath) -> HPEpgCollectionViewCell {
+        let cell = collectionView.dequeue(cellClass: TimeSegmentCell.self, forIndexPath: indexPath)
         
         let hour = timeInterval / 3600
         let remainingTimeInterval = timeInterval - hour * 3600
@@ -143,14 +143,14 @@ extension ViewController: HPEpgCollectionViewDataSource {
         return cell
     }
     
-    func cellForChannel(at index: Int, indexPath: IndexPath) -> HPEpgCollectionViewCell {
+    func cellForChannelItem(at index: Int, indexPath: IndexPath) -> HPEpgCollectionViewCell {
         let cell = collectionView.dequeue(cellClass: ChannelCell.self, forIndexPath: indexPath)
         cell.setTitle(channels[index])
         cell.setShouldHighlight(currentSelectedProgramIndex?.channelIndex == index)
         return cell
     }
     
-    func cellForProgram(at index: Int, inChannel channelIndex: Int, indexPath: IndexPath) -> HPProgramCollectionViewCell {
+    func cellForProgramItem(at index: Int, inChannel channelIndex: Int, indexPath: IndexPath) -> HPProgramCollectionViewCell {
         let cell = collectionView.dequeue(cellClass: ProgramCell.self, forIndexPath: indexPath)
         cell.setTitle(programs.get(channelIndex)!.get(index)!.programName)
         let shouldBorder = currentSelectedProgramIndex?.channelIndex == channelIndex && currentSelectedProgramIndex?.programIndex == index
@@ -159,8 +159,8 @@ extension ViewController: HPEpgCollectionViewDataSource {
         return cell
     }
     
-    func cellForTimeIndicator(indexPath: IndexPath) -> HPTimeIndicatorContainerCell {
-        let cell = collectionView.dequeue(cellClass: TimeIndicatorCell.self, forIndexPath: indexPath)
+    func cellForTimeMarker(at indexPath: IndexPath) -> HPTimeMarkerContainerCell {
+        let cell = collectionView.dequeue(cellClass: TimeMarkerCell.self, forIndexPath: indexPath)
         return cell
     }
     

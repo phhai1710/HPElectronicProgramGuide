@@ -1,5 +1,5 @@
 //
-//  HPTimeIndicatorContainerCell.swift
+//  HPTimeMarkerContainerCell.swift
 //  HPElectronicProgramGuide
 //
 //  Created by Hai Pham on 02/24/2024.
@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 
 /**
- The root cell that will be used to subclass and add custom indicator view inside
+ The root cell that will be used to subclass and add custom marker view inside
  */
-open class HPTimeIndicatorContainerCell: UICollectionViewCell {
+open class HPTimeMarkerContainerCell: UICollectionViewCell {
     
-    /// The view that take responsibility of containing all time indicator's content.
+    /// The view that take responsibility of containing all time marker's content.
     public let containerView = UIView()
     private var leadingContainerConstraint: NSLayoutConstraint?
     
@@ -58,10 +58,10 @@ open class HPTimeIndicatorContainerCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    /// Align the indicator along with the time interval
+    /// Align the marker along with the time interval
     ///
-    /// - parameter offsetX: The position of time indicator
-    public func setTimeIndicator(at offsetX: CGFloat) {
+    /// - parameter offsetX: The position of time marker
+    public func updateTimeMarker(at offsetX: CGFloat) {
         leadingContainerConstraint?.constant = offsetX
     }
 }

@@ -15,7 +15,7 @@ import Foundation
 open class HPEpgCollectionViewCell: UICollectionViewCell {
     // MARK: - Properties
 
-    @objc public var cellBackgroundColor: UIColor? {
+    public var cellBackgroundColor: UIColor? {
         get {
             return backgroundContainerView.backgroundColor
         }
@@ -32,7 +32,7 @@ open class HPEpgCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    @objc public var cellBorderColor: CGColor? {
+    public var cellBorderColor: CGColor? {
         get {
             return backgroundContainerView.layer.borderColor
         }
@@ -85,14 +85,14 @@ open class HPEpgCollectionViewCell: UICollectionViewCell {
                            toItem: self.contentView,
                            attribute: .bottom,
                            multiplier: 1,
-                           constant: -HPEpgCollectionView.cellPadding).isActive = true
+                           constant: -HPEpgCollectionView.itemPadding).isActive = true
         NSLayoutConstraint(item: backgroundContainerView,
                            attribute: .trailing,
                            relatedBy: .equal,
                            toItem: self.contentView,
                            attribute: .trailing,
                            multiplier: 1,
-                           constant: -HPEpgCollectionView.cellPadding).isActive = true
+                           constant: -HPEpgCollectionView.itemPadding).isActive = true
     }
     
     required public init?(coder: NSCoder) {
